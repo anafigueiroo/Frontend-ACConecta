@@ -39,7 +39,7 @@
 
       <p class="text-center text-sm mt-4 text-gray-600">
         Não tem uma conta?
-        <NuxtLink to="/cadastro" class="text-blue-600 underline">Cadastre-se!</NuxtLink>
+        <NuxtLink to="/register" class="text-blue-600 underline">Cadastre-se!</NuxtLink>
       </p>
     </form>
   </div>

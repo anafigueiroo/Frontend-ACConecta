@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import LoginDesktop from '~/components/LoginDesktop.vue'
-import LoginMobile from '~/components/LoginMobile.vue'
+import LoginDesktop from  '@/components/login/LoginDesktop.vue'
+import LoginMobile from '@/components/login/LoginMobile.vue'
 
 const isMobile = ref(null)
 
