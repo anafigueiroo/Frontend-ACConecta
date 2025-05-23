@@ -41,7 +41,7 @@
               <input type="checkbox" v-model="rememberMe" class="mr-2" />
               Remember me
             </label>
-            <NuxtLink to="/recuperar-senha" class="text-sm text-blue-600 hover:underline">
+            <NuxtLink to="/cadastro-acc" class="text-sm text-blue-600 hover:underline">
               Esqueceu a sua senha?
             </NuxtLink>
           </div>
