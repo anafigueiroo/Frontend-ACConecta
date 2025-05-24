@@ -1,17 +1,16 @@
 # Frontend do ACConecta
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Configurar o ambiente de desenvolvimento
 
-## Setup
+git branch https://github.com/anafigueiroo/Frontend-ACConecta.git
 
-Make sure to install dependencies:
+## Instalar as dependências do projeto
 
 ```bash
 # npm
 npm install
 
-
-## Development Server
+## Colocar a aplicação para rodar no servidor local
 
 Start the development server on `http://localhost:3000`:
 
@@ -27,10 +26,30 @@ Build the application for production:
 # npm
 npm run build
 
-Locally preview production build:
+## Criar nova branch e entrar nela
 
-```bash
-# npm
-npm run preview
+git branch -b nome_da_brach
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Entrar em branch já existente
+
+git branch nome_da_branch
+
+## Ver as branchs existentes
+
+git branch
+
+## Subir todas as mudanças no git
+
+git add .
+
+## Commitar as mudanças que foram feitas
+
+git commit -m "Adiciona funcionalidade X ao projeto"
+
+## Subir as alterações para a branch
+
+git push
+
+## Abrir pull request
+
+Depois de ter commitado, abrir o github, ver a branch e abrir um pull request para mergear com a branch, inserindo uma descrição do que foi feito
