@@ -46,8 +46,8 @@
 
 <script setup>
     import { ref, computed } from 'vue'
-    import FormAluno from '@/components/register/form/FormAluno.vue'
-    import FormInstituicao from '@/components/register/form/FormInstituicao.vue'
+    import FormAluno from '@/components/public/register/form/FormAluno.vue'
+    import FormInstituicao from '@/components/public/register/form/FormInstituicao.vue'
 
     const tipo = ref('aluno')
 

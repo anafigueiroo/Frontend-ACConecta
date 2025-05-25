@@ -13,7 +13,7 @@
     <div class="flex items-center justify-center">
       <div class="bg-white p-10 rounded-xl shadow-lg w-full max-w-xl">
         <div class="flex flex-col items-center mb-6">
-          <img src="assets/images/logo-acc-conecta.png" alt="Mini Logo" class="w-10 h-10 mb-2" />
+          <img src="assets/images/logo-acc-conecta.png" alt="Mini Logo" class="w-15 h-15 mb-2" />
           <h1 class="text-xl font-semibold text-gray-800">Bem-vindo(a)!</h1>
         </div> 
 
@@ -55,7 +55,7 @@
 
           <p class="text-center text-sm mt-4 text-gray-600">
             Não tem uma conta?
-            <NuxtLink to="/register" class="text-blue-600 hover:underline">Cadastre-se!</NuxtLink>
+            <NuxtLink to="/public/register" class="text-blue-600 hover:underline">Cadastre-se!</NuxtLink>
           </p>
         </form>
       </div>

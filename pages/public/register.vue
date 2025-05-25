@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import RegisterDesktop from '@/components/register/RegisterDesktop.vue'
-import RegisterMobile from '@/components/register/RegisterMobile.vue'
+import RegisterDesktop from '@/components/public/register/RegisterDesktop.vue'
+import RegisterMobile from '@/components/public/register/RegisterMobile.vue'
 
 const isMobile = ref(null)
 

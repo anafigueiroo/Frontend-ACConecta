@@ -1,9 +1,9 @@
 <template>
-  <div class="min-h-screen flex flex-col justify-center items-center bg-white px-6 py-10">
-    <img src="assets/images/logo-acc-conecta.png" alt="Logo ACConecta" class="w-70" />
+  <div class="min-h-screen flex flex-col justify-center items-center bg-white px-6 py-2">
+    <img src="assets/images/logo-acc-conecta.png" alt="Logo ACConecta" class="w-60" />
     
-    <h1 class="text-lg font-semibold text-gray-800 mb-2 text-center">Atividades para horas complementares!</h1>
-    <p class="text-sm text-gray-500 mb-6 text-center">Faça login e acesse oportunidades de horas complementares!</p>
+    <h1 class="text-lg font-semibold text-gray-800 text-center">Atividades para horas complementares!</h1>
+    <p class="text-sm text-gray-500 text-center mb-4">Faça login e acesse oportunidades de horas complementares!</p>
 
     <form class="w-full max-w-sm">
       <div class="mb-4">
@@ -16,7 +16,7 @@
         />
       </div>
 
-      <div class="mb-4">
+      <div class="mb-1">
         <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
         <input
           type="password"
@@ -39,7 +39,7 @@
 
       <p class="text-center text-sm mt-4 text-gray-600">
         Não tem uma conta?
-        <NuxtLink to="/register" class="text-blue-600 underline">Cadastre-se!</NuxtLink>
+        <NuxtLink to="/public/register" class="text-blue-600 underline">Cadastre-se!</NuxtLink>
       </p>
     </form>
   </div>

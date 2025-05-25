@@ -90,7 +90,7 @@
 
           <p class="text-center text-sm mt-4 text-gray-600">
             Já possui uma conta?
-            <NuxtLink to="/register" class="text-blue-600 hover:underline">Faça login!</NuxtLink>
+            <NuxtLink to="/public/register" class="text-blue-600 hover:underline">Faça login!</NuxtLink>
           </p>
         </form>
 </template>
