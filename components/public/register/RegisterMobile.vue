@@ -1,46 +1,48 @@
 <template>
   <div class="min-h-screen flex flex-col justify-center items-center bg-white px-6 py-2">
-    <img src="assets/images/logo-acc-conecta.png" alt="Logo ACConecta" class="w-60" />
-    
-    <h1 class="text-lg font-semibold text-gray-800 text-center">Atividades para horas complementares!</h1>
-    <p class="text-sm text-gray-500 text-center mb-4">Faça login e acesse oportunidades de horas complementares!</p>
+    <div class="flex col-2 items-center mb-1">
+          <img src="assets/images/logo-acc-conecta.png" alt="Mini Logo" class="w-15 h-15" />
+          <h1 class="text-l font-semibold text-gray-800">ACConecta</h1>
+    </div>
 
-    <form class="w-full max-w-sm">
-      <div class="mb-4">
-        <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
-        <input
-          type="email"
-          id="email"
-          class="mt-1 w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          placeholder="Digite seu e-mail"
-        />
-      </div>
+    <h1 class="text-xl font-bold text-gray-800 mb-3 mt-5">Cadastro de conta</h1>
 
-      <div class="mb-1">
-        <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
-        <input
-          type="password"
-          id="password"
-          class="mt-1 w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          placeholder="********"
-        />
-      </div>
+    <div class="flex justify-center space-x-2 mb-6">
+          <button
+            @click="tipo = 'aluno'"
+            :class="[
+              'px-15 py-1 rounded',
+              tipo === 'aluno' ? 'bg-blue-500 text-white' : 'bg-blue-200 hover:bg-blue-300 text-white'
+            ]"
+          >
+            Aluno
+          </button>
+          <button
+            @click="tipo = 'instituicao'"
+            :class="[
+              'px-12 py-1 rounded',
+              tipo === 'instituicao' ? 'bg-blue-500 text-white' : 'bg-blue-200 hover:bg-blue-300 text-white'
+            ]"
+          >
+            Instituição
+          </button>
+        </div>
 
-      <div class="flex justify-end text-sm mb-4">
-        <NuxtLink to="/recuperar-senha" class="text-blue-600 underline">Esqueceu a sua senha?</NuxtLink>
-      </div>
-
-      <button
-        type="submit"
-        class="w-full bg-blue-500 hover:bg-blue-600 font-bold text-lg text-white py-3 px-6 rounded-full transition"
-      >
-        Entrar
-      </button>
-
-      <p class="text-center text-sm mt-4 text-gray-600">
-        Não tem uma conta?
-        <NuxtLink to="/public/register" class="text-blue-600 underline">Cadastre-se!</NuxtLink>
-      </p>
-    </form>
+        <div class="w-full max-w-2xl mx-auto px-4 sm:px-6">
+          <component :is="formComponent" />
+        </div>
   </div>
 </template>
+
+
+<script setup>
+    import { ref, computed } from 'vue'
+    import FormAluno from '@/components/public/register/form/FormAluno.vue'
+    import FormInstituicao from '@/components/public/register/form/FormInstituicao.vue'
+
+    const tipo = ref('aluno')
+
+    const formComponent = computed(() => {
+        return tipo.value === 'aluno' ? FormAluno : FormInstituicao
+    })
+</script>
