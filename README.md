@@ -53,3 +53,7 @@ git push
 ## Abrir pull request
 
 Depois de ter commitado, abrir o github, ver a branch e abrir um pull request para mergear com a branch, inserindo uma descrição do que foi feito
+
+## Para rodar a aplicação usando docker
+
+docker-compose up --build
