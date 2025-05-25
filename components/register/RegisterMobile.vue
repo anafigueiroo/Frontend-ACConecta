@@ -2,8 +2,8 @@
   <div class="min-h-screen flex flex-col justify-center items-center bg-white px-6 py-10">
     <img src="assets/images/logo-acc-conecta.png" alt="Logo ACConecta" class="w-70" />
     
-    <h1 class="text-lg font-semibold text-gray-800 mb-2 text-center">Atividades para horas complementares!</h1>
-    <p class="text-sm text-gray-500 mb-6 text-center">Faça login e acesse oportunidades de horas complementares!</p>
+    <h1 class="text-lg font-semibold text-gray-800 text-center">Atividades para horas complementares!</h1>
+    <p class="text-sm text-gray-500 text-center">Faça aalogin e acesse oportunidades de horas complementares!</p>
 
     <form class="w-full max-w-sm">
       <div class="mb-4">
