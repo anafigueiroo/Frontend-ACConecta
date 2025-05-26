@@ -17,7 +17,7 @@
           <h1 class="text-xl font-semibold text-gray-800">Bem-vindo(a)!</h1>
         </div> 
 
-        <form>
+        <form @submit.prevent="entrar">
           <div class="mb-4">
             <label for="email" class="block text-sm/6 font-medium text-gray-900">E-mail</label>
             <div class="mt-2">
@@ -38,7 +38,7 @@
 
           <div class="flex justify-between items-center mb-4">
             <label class="flex items-center text-sm">
-              <input type="checkbox" v-model="rememberMe" class="mr-2" />
+              <input type="checkbox" class="mr-2" />
               Remember me
             </label>
             <NuxtLink to="/cadastro-acc" class="text-sm text-blue-600 hover:underline">
@@ -62,3 +62,19 @@
     </div>
   </div>
 </template>
+
+<script setup>
+const { tipoUsuario } = useAuth()
+
+let perfil = tipoUsuario.value;
+console.log('Usuário em sessão:', tipoUsuario.value)
+
+    function entrar() {
+      if (!tipoUsuario.value) {
+        navigateTo('/public/register');
+      }
+      else {
+        navigateTo('/' + tipoUsuario.value + '/home');
+      }
+    }
+</script>

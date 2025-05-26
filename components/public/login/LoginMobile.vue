@@ -5,7 +5,7 @@
     <h1 class="text-lg font-semibold text-gray-800 text-center">Atividades para horas complementares!</h1>
     <p class="text-sm text-gray-500 text-center mb-4">Faça login e acesse oportunidades de horas complementares!</p>
 
-    <form class="w-full max-w-sm">
+    <form class="w-full max-w-sm" @submit.prevent="entrar">
       <div class="mb-4">
         <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
         <input
@@ -44,3 +44,9 @@
     </form>
   </div>
 </template>
+
+<script setup>
+    function entrar() {
+        navigateTo('/aluno/home')
+    }
+</script>

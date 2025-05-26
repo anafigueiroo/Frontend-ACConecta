@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="fazerLoginComoAluno">
     <div class="mb-4">
         <label for="nome" class="block text-sm/6 font-medium text-gray-900">Nome</label>
         <div class="mt-2 flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-blue-400">
@@ -103,11 +103,14 @@
       id: 4,
       name: 'Sistemas de Informação',
     },
-  ]
+  ];
 
   const selected = ref(cursos[0])
 
-  function handleSubmit() {
-    alert('Aluno cadastrado!')
+  const { login } = useAuth();
+
+  function fazerLoginComoAluno() {
+    login('aluno')
+    navigateTo('/')
   }
 </script>
