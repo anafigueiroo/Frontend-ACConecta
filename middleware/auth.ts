@@ -2,7 +2,7 @@ export default defineNuxtRouteMiddleware((to) => {
   const tipoUsuario = useCookie('tipoUsuario');
 
   if (!tipoUsuario.value) {
-    return navigateTo('/unauthorized');
+    return navigateTo('/');
   }
 
   if (tipoUsuario.value === 'aluno' && to.path.startsWith('/instituicao')) {

@@ -66,9 +66,6 @@
 <script setup>
 const { tipoUsuario } = useAuth()
 
-let perfil = tipoUsuario.value;
-console.log('Usuário em sessão:', tipoUsuario.value)
-
     function entrar() {
       if (!tipoUsuario.value) {
         navigateTo('/public/register');
