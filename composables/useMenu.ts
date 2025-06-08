@@ -8,7 +8,7 @@ export function useMenu() {
 
   const menuAluno = [
     { label: 'Home', link: '/aluno/home' },
-    { label: 'Histórico de Atividades', link: '/aluno/home' },
+    { label: 'Histórico de Atividades', link: '/aluno/historico' },
     { label: 'Instituições', link: '/aluno/home' },
      { label: 'Atividades disponíveis', link: '/aluno/home' },
   ]

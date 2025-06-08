@@ -1,0 +1,47 @@
+<template>
+  <div class="bg-white text-gray-800">
+    <div class="max-w-xl mx-auto">
+      <h1 class="text-center text-xl font-semibold m-6">Histórico de Atividades</h1>
+
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold mb-4">Pendentes</h2>
+        <div class="relative border-l-2 border-blue-400 ml-1 space-y-6">
+          <ItemHistorico
+            titulo="Evento Teste"
+            tempo="4 horas"
+            data="18/09/2024"
+            empresa="Empresa 3"
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold mb-4">Concluídas</h2>
+        <div class="relative border-l-2 border-blue-400 ml-1 space-y-6">
+          <ItemHistorico
+            titulo="Evento Corrida"
+            tempo="4 horas"
+            data="18/09/2024"
+            empresa="Empresa 3"
+          />
+          <ItemHistorico
+            titulo="Doação Sangue"
+            tempo="4 horas"
+            data="18/09/2024"
+            empresa="Empresa 3"
+          />
+          <ItemHistorico
+            titulo="Mundo das profissões"
+            tempo="8 horas"
+            data="18/09/2024"
+            empresa="Empresa 3"
+          />
+        </div>
+      </section>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+    import ItemHistorico from '~/components/aluno/historico/ItemHistorico.vue';
+</script>
