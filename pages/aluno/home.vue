@@ -1,16 +1,24 @@
 <template>
   <div class="flex flex-col justify-center items-center m-5">
-    <h1 class="text-xl font-semibold mb-4 text-gray-800 mb-5">
+    <h1 class="text-xl font-semibold text-gray-800">
       Seja bem-vindo(a), {{ nomeUsuario ? nomeUsuario : 'Carregando...' }}!
     </h1>
-  <div class="relative w-[250px] h-[250px]">
-    <Doughnut :data="data" :options="options" />
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="text-2xl font-bold">72%</div>
+  </div>
+  <div class="flex justify-center items-center p-4">
+    <div class="bg-white rounded-2xl shadow-md p-5 w-full max-w-xs sm:max-w-sm md:max-w-md">
+      <h2 class="text-gray-800 font-bold text-lg">Horas concluídas</h2>
+      <p class="text-blue-500 text-sm">Percentual de horas realizadas</p>
+
+      <div class="relative w-full aspect-square max-w-[220px] mx-auto">
+        <Doughnut :data="data" :options="options" />
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="text-2xl font-bold text-gray-800 drop-shadow">72%</div>
+        </div>
+      </div>
+
+      <p class="text-center text-gray-400 text-xs">*Dashboard não interativo</p>
     </div>
   </div>
-  </div>
-
 </template>
 
 <script setup lang="ts"> 
@@ -36,6 +44,8 @@ const data = {
 }
 
 const options = {
+  responsive: true,
+  maintainAspectRatio: false,
   cutout: '60%',
   plugins: {
     legend: { display: false },
