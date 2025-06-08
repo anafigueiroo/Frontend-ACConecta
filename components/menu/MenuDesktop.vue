@@ -14,13 +14,29 @@
       </nav>
     </div>
 
-    <div class="flex items-center space-x-4">
-      <IconUser />
+     <div class="flex items-center space-x-4">
+      <NuxtLink
+        v-if="tipoUsuario"
+        :to="`/${tipoUsuario}/user`"
+        class="text-gray-800 hover:text-blue-600 transition-colors"
+      >
+        <IconUser class="w-6 h-6" />
+      </NuxtLink>
     </div>
   </header>
 </template>
 
 <script setup>
-import { User as IconUser } from 'lucide-vue-next'
-defineProps({ items: Array })
+  import { ref, onMounted } from 'vue'
+  import { useAuth } from '#imports' // ou o caminho correto do seu projeto
+  import { User as IconUser } from 'lucide-vue-next'
+
+  defineProps({ items: Array })
+
+  const tipoUsuario = ref('')
+
+  onMounted(() => {
+    const auth = useAuth()
+    tipoUsuario.value = auth.tipoUsuario.value ?? ''
+  })
 </script>
