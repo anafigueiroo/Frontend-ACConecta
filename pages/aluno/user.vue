@@ -22,12 +22,13 @@
           <ArrowRight class="w-5 h-5" />
         </button>
       </NuxtLink>
-      <button class="grid grid-cols-[1fr_auto] items-center w-full bg-blue-400 text-white py-4 px-4 rounded-full hover:bg-blue-500 mt-4">
-        <span class="justify-self-center">Alterar cadastro</span>
-        <ArrowRight class="w-5 h-5" />
-      </button>
-
-      <button class="w-full border-2 border-blue-400 text-blue-600 py-4 rounded-full font-semibold hover:bg-blue-50">
+      <NuxtLink to="update-cadastro" class="justify-self-center">
+        <button class="grid grid-cols-[1fr_auto] items-center w-full bg-blue-400 text-white py-4 px-4 rounded-full hover:bg-blue-500 mt-4">
+          <span class="justify-self-center">Alterar cadastro</span>
+          <ArrowRight class="w-5 h-5" />
+        </button>
+      </NuxtLink>
+      <button class="w-full border-2 border-blue-400 text-blue-600 py-4 rounded-full font-semibold hover:bg-blue-50 mt-4">
         Alterar senha
       </button>
     </div>
