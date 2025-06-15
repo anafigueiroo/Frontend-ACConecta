@@ -2,7 +2,7 @@
   <div class="bg-white text-gray-800 min-h-screen px-4 py-6">
     <div class="max-w-xl mx-auto text-center">
       <div class="flex flex-col items-center mb-6">
-        <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center">
+        <div class="w-30 h-30 rounded-full bg-gray-100 flex items-center justify-center">
           <User class="w-8 h-8 text-gray-500" />
         </div>
         <h2 class="text-lg font-semibold mt-4">{{ instituicao.nome }}</h2>
