@@ -17,7 +17,8 @@
         <div
           v-for="(inst, index) in instituicoesFiltradas"
           :key="index"
-          class="flex items-center justify-between p-4 bg-white shadow rounded-lg transition hover:shadow-md"
+          class="flex items-center justify-between p-4 bg-white shadow rounded-lg transition hover:shadow-md cursor-pointer"
+          @click="irParaDetalhes()"
         >
           <div class="flex items-center gap-4">
             <div class="bg-blue-500 rounded-full w-10 h-10 flex items-center justify-center text-white">
@@ -31,9 +32,9 @@
               </div>
             </div>
           </div>
-         <div class="text-2xl text-gray-600">
+          <div class="text-2xl text-gray-600">
             <ArrowRight class="w-5 h-5" />
-        </div>
+          </div>
         </div>
 
         <p v-if="instituicoesFiltradas.length === 0" class="text-center text-sm text-gray-500">
@@ -63,4 +64,8 @@ const instituicoesFiltradas = computed(() =>
     inst.nome.toLowerCase().includes(busca.value.toLowerCase())
   )
 )
+
+const irParaDetalhes = () => {
+  navigateTo('/aluno/detalhes-instituicao')
+}
 </script>

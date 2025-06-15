@@ -48,19 +48,6 @@
 
 <script setup lang="ts">
 import ItemHistorico from '~/components/aluno/historico/ItemHistorico.vue'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
-
-interface Atividade {
-  titulo: string
-  empresa: string
-  status: string
-  descricao: string
-  tempo: string
-  data: string
-  endereco: string
-}
 
 const irParaDetalhes = () => {
     navigateTo('/aluno/detalhes-acc');
