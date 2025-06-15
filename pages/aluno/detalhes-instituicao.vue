@@ -32,7 +32,9 @@
               <p class="text-sm text-gray-600">Tempo de atividade: {{ atividade.tempo }}</p>
               <p class="text-sm text-blue-500 mt-1">{{ atividade.data }}</p>
             </div>
-            <ArrowRight class="w-5 h-5 text-blue-500 mt-1" />
+            <div class="text-2xl text-gray-600">
+                <ArrowRight class="w-5 h-5" />
+            </div>
           </div>
         </div>
       </div>
