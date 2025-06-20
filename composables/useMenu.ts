@@ -10,7 +10,7 @@ export function useMenu() {
     { label: 'Home', link: '/aluno/home' },
     { label: 'Histórico de Atividades', link: '/aluno/historico' },
     { label: 'Instituições', link: '/aluno/list-instituicoes' },
-     { label: 'Atividades disponíveis', link: '/aluno/home' },
+     { label: 'Atividades disponíveis', link: '/aluno/listagem-accs' },
   ]
 
   const menuInstituicao = [
