@@ -10,12 +10,13 @@ export function useMenu() {
     { label: 'Home', link: '/aluno/home' },
     { label: 'Histórico de Atividades', link: '/aluno/historico' },
     { label: 'Instituições', link: '/aluno/list-instituicoes' },
-     { label: 'Atividades disponíveis', link: '/aluno/listagem-accs' },
+     { label: 'Atividades Disponíveis', link: '/aluno/listagem-accs' },
   ]
 
   const menuInstituicao = [
     { label: 'Home Instituição', link: '/instituicao/home' },
-    { label: 'Gerenciar Cursos', link: '/instituicao/home' },
+    { label: 'Meus Cadastros', link: '/instituicao/listagem-accs' },
+    { label: 'Cadastro de Atividade', link: '/instituicao/cadastrar-acc' },
   ]
 
   const rotasSemMenu = ['/', '/unauthorized', '/public/register']

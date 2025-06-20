@@ -1,90 +1,69 @@
 <template>
-  <div class="min-h-screen bg-gray-100 flex flex-col">
-    <!-- Conteúdo Principal -->
-    <main class="flex-1 flex items-center justify-center p-6">
-      <div class="w-full max-w-xl bg-white p-6 rounded-2xl shadow-lg">
-        <h1 class="text-2xl font-bold text-center mb-6 text-gray-800">Cadastro de Atividade</h1>
+  <div class="bg-white flex items-center justify-center">
+    <div class="w-full max-w-md text-center">
+      <h2 class="text-xl font-semibold text-gray-800 m-6">Cadastro de Atividade</h2>
 
-        <!-- Formulário -->
-        <form @submit.prevent="handleSubmit" class="space-y-5">
-          <div>
-            <label for="titulo" class="block text-sm font-medium text-gray-700">Título</label>
-            <input
-              v-model="form.titulo"
-              type="text"
-              id="titulo"
-              placeholder="Texto do campo"
-              class="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+      <form @submit.prevent="cadastrar" class="space-y-5 text-left">
+
+        <div>
+          <label for="titulo" class="block text-sm font-medium text-gray-900 mb-1">Título</label>
+          <div class="flex items-center rounded-md bg-white pl-3 outline outline-1 outline-gray-300 focus-within:outline-2 focus-within:outline-blue-400">
+            <input type="text" id="titulo" placeholder="Informe o titulo"
+              class="w-full py-3.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none rounded-md" />
           </div>
+        </div>
 
-          <div>
-            <label for="descricao" class="block text-sm font-medium text-gray-700">Descrição</label>
-            <textarea
-              v-model="form.descricao"
-              id="descricao"
-              placeholder="Texto do campo"
-              rows="3"
-              class="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            ></textarea>
+        <div>
+          <label for="descricao" class="block text-sm font-medium text-gray-700">Descrição</label>
+          <textarea
+            id="descricao"
+            placeholder="Texto do campo"
+            rows="3"
+            class="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+           ></textarea>
+        </div>
+
+        <div>
+          <label for="tempo" class="block text-sm font-medium text-gray-900 mb-1">Tempo</label>
+          <div class="flex items-center rounded-md bg-white pl-3 outline outline-1 outline-gray-300 focus-within:outline-2 focus-within:outline-blue-400">
+            <input type="text" id="tempo" placeholder="Informe o tempo"
+              class="w-full py-3.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none rounded-md" />
           </div>
+        </div>
 
-          <div>
-            <label for="tempo" class="block text-sm font-medium text-gray-700">Tempo</label>
-            <input
-              v-model="form.tempo"
-              type="text"
-              id="tempo"
-              placeholder="4 horas"
-              class="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+        <div>
+          <label for="data" class="block text-sm font-medium text-gray-700">Data</label>
+          <input
+            type="date"
+            id="data"
+            class="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+           />
+        </div>
+
+        <div>
+          <label for="local" class="block text-sm font-medium text-gray-900 mb-1">Local</label>
+          <div class="flex items-center rounded-md bg-white pl-3 outline outline-1 outline-gray-300 focus-within:outline-2 focus-within:outline-blue-400">
+            <input type="local" id="local" placeholder="Informe o local"
+              class="w-full py-3.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none rounded-md" />
           </div>
+        </div>
 
-          <div>
-            <label for="data" class="block text-sm font-medium text-gray-700">Data</label>
-            <input
-              v-model="form.data"
-              type="date"
-              id="data"
-              class="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <div>
-            <label for="local" class="block text-sm font-medium text-gray-700">Local</label>
-            <input
-              v-model="form.local"
-              type="text"
-              id="local"
-              placeholder="Texto do campo"
-              class="mt-1 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-
-          <button
-            type="submit"
-            class="w-full bg-blue-600 text-white py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300"
-          >
+        <div class="pt-4 space-y-3">
+          <button type="submit"
+            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-full transition">
             Cadastrar
           </button>
-        </form>
-      </div>
-    </main>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
 
-const form = ref({
-  titulo: '',
-  descricao: '',
-  tempo: '',
-  data: '',
-  local: '',
-})
+const router = useRouter()
 
-const handleSubmit = () => {
-  console.log('Formulário enviado:', form.value)
+function cadastrar() {
+  router.push('/instituicao/listagem-accs')
 }
 </script>

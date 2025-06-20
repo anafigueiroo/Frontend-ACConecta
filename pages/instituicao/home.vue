@@ -1,66 +1,72 @@
 <template>
-  <div class="min-h-screen bg-white">
-    <main class="max-w-md mx-auto px-4 pt-6 pb-10">
-      <!-- Campo de busca -->
-      <div class="relative mb-4">
-        <input
-          type="text"
-          v-model="searchQuery"
-          placeholder="Buscar..."
-          class="w-full p-3 pl-10 bg-gray-100 text-gray-800 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300"
-        />
-        <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 top-3 w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.6-5.4A7.5 7.5 0 1110.5 3a7.5 7.5 0 017.5 7.5z" />
-        </svg>
-      </div>
+  <div class="min-h-screen bg-white flex flex-col items-center py-6 px-4">
+    <h1 class="text-xl font-semibold text-gray-800">
+      Seja bem-vindo(a), Instituição!
+    </h1>
 
-      <!-- Lista de atividades -->
-      <div class="bg-white shadow-md rounded-xl p-4 border">
-        <h2 class="text-sm font-semibold text-gray-600 mb-4">Meus cadastros</h2>
+    <div class="relative w-full max-w-md m-6">
+      <input
+        v-model="searchQuery"
+        type="text"
+        placeholder="Buscar atividade..."
+        class="w-full py-2 pl-10 pr-4 rounded-full shadow-sm border border-gray-300 text-gray-800 focus:ring-2 focus:ring-blue-300 focus:outline-none"
+      />
+      <Search class="w-5 h-5 absolute left-3 top-2.5 text-gray-500" />
+    </div>
 
+    <div class="bg-white rounded-xl shadow-md p-4 w-full max-w-md">
+      <h2 class="text-sm font-semibold text-gray-700 mb-3">Meus cadastros</h2>
+
+      <div v-for="(item, index) in filteredActivities" :key="item.id" class="relative pl-6 pb-6">
         <div
-          v-for="(item, index) in filteredActivities"
-          :key="item.id"
-          class="relative pl-6 pb-6"
-        >
-          <div class="absolute left-2 top-1 w-3 h-3 rounded-full bg-blue-500"></div>
-          <div class="border-l-2 border-blue-500 pl-4">
-            <h3 class="font-medium text-gray-800">{{ item.title }}</h3>
-            <p class="text-sm text-gray-600">Tempo de atividade: {{ item.hours }} horas</p>
-            <p class="text-sm text-blue-600 font-medium">{{ item.date }}</p>
-            <div class="flex items-center justify-between mt-1">
-              <span
-                v-if="item.status === 'aberta'"
-                class="text-xs text-green-700 bg-green-100 font-semibold px-2 py-0.5 rounded"
-              >
-                ABERTA
-              </span>
-              <span
-                v-else
-                class="text-xs text-white bg-blue-600 font-semibold px-2 py-0.5 rounded"
-              >
-                ENCERRADA
-              </span>
-              <input type="checkbox" :checked="item.selected" class="w-5 h-5 accent-blue-600" />
-            </div>
+          v-if="index !== filteredActivities.length - 1"
+          class="absolute left-3 top-3 w-px h-full bg-blue-500"
+        ></div>
+
+        <div class="absolute left-2 top-2.5 w-2 h-2 rounded-full bg-blue-500"></div>
+
+        <div class="pl-2">
+          <h3 class="text-m font-semibold text-gray-800">{{ item.title }}</h3>
+          <p class="text-sm text-gray-600">Tempo de atividade: {{ item.hours }} horas</p>
+          <p class="text-sm text-blue-600 font-medium">{{ item.date }}</p>
+
+          <div class="flex items-center justify-between mt-1">
+            <span
+              v-if="item.status === 'aberta'"
+              class="text-[10px] px-6 py-1 rounded bg-green-100 text-green-800 font-semibold"
+            >
+              ABERTA
+            </span>
+            <span
+              v-else
+              class="text-[10px] px-3 py-1 rounded bg-blue-100 text-blue-800 font-semibold"
+            >
+              ENCERRADA
+            </span>
+
+            <input
+              type="checkbox"
+              v-model="item.selected"
+              class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+            />
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Botão cadastrar -->
-      <div class="mt-10">
-        <button class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-full shadow-md transition">
-          Cadastrar nova ACC
-        </button>
-      </div>
-    </main>
+    <button
+      @click="irParaCadastroAcc()"
+      class="mt-8 w-full max-w-md bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-full shadow-md transition"
+    >
+      Cadastrar nova ACC
+    </button>
   </div>
 </template>
 
 <script setup lang="ts">
+import { Search } from 'lucide-vue-next'
 import { ref, computed } from 'vue'
 
-const activeTab = ref('home')
 const searchQuery = ref('')
 
 const activities = ref([
@@ -87,4 +93,9 @@ const filteredActivities = computed(() =>
     item.title.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 )
+
+const irParaCadastroAcc = () => {
+  navigateTo('/instituicao/cadastrar-acc')
+}
+
 </script>
